@@ -3,36 +3,48 @@
 
 import type { PrismTheme } from "../types";
 
-var theme: PrismTheme = {
+var theme = (isDarkMode = false): PrismTheme => ({
   plain: {
     color: "#393A34",
-    backgroundColor: "#f6f8fa"
+    backgroundColor: isDarkMode ? "#0D1117" : "#f6f8fa",
   },
   styles: [
+    {
+      types: ["property-access"],
+      style: {
+        color: isDarkMode ? "#79c0ff" : "relative",
+      },
+    },
+    {
+      types: ["parameter", "interpolation"],
+      style: {
+        color: isDarkMode ? "#c9d1d9" : "relative",
+      },
+    },
     {
       types: ["comment", "prolog", "doctype", "cdata"],
       style: {
         color: "#999988",
-        fontStyle: "italic"
-      }
+        fontStyle: "italic",
+      },
     },
     {
       types: ["namespace"],
       style: {
-        opacity: 0.7
-      }
+        opacity: 0.7,
+      },
     },
     {
       types: ["string", "attr-value"],
       style: {
-        color: "#e3116c"
-      }
+        color: isDarkMode ? "#a5d6ff" : "#e3116c",
+      },
     },
     {
       types: ["punctuation", "operator"],
       style: {
-        color: "#393A34"
-      }
+        color: isDarkMode ? "#c9d1d9" : "#393A34",
+      },
     },
     {
       types: [
@@ -45,37 +57,37 @@ var theme: PrismTheme = {
         "constant",
         "property",
         "regex",
-        "inserted"
+        "inserted",
       ],
       style: {
-        color: "#36acaa"
-      }
+        color: isDarkMode ? "#c9d1d9" : "#36acaa",
+      },
     },
     {
       types: ["atrule", "keyword", "attr-name", "selector"],
       style: {
-        color: "#00a4db"
-      }
+        color: "#00a4db",
+      },
     },
     {
       types: ["function", "deleted", "tag"],
       style: {
-        color: "#d73a49"
-      }
+        color: isDarkMode ? "#ffa657" : "#d73a49",
+      },
     },
     {
       types: ["function-variable"],
       style: {
-        color: "#6f42c1"
-      }
+        color: "#6f42c1",
+      },
     },
     {
       types: ["tag", "selector", "keyword"],
       style: {
-        color: "#00009f"
-      }
-    }
-  ]
-};
+        color: isDarkMode ? "#ff7b72" : "#00009f",
+      },
+    },
+  ],
+});
 
 export default theme;
