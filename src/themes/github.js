@@ -5,7 +5,7 @@ import type { PrismTheme } from "../types";
 
 var theme = (isDarkMode = false): PrismTheme => ({
   plain: {
-    color: "#393A34",
+    color: isDarkMode ? "#79c0ff" : "#393A34",
     backgroundColor: isDarkMode ? "#0D1117" : "#f6f8fa",
   },
   styles: [
@@ -22,7 +22,14 @@ var theme = (isDarkMode = false): PrismTheme => ({
       },
     },
     {
-      types: ["comment", "prolog", "doctype", "cdata"],
+      types: ["comment"],
+      style: {
+        color: isDarkMode ? "#8b949e" : "unset",
+        letterSpacing: isDarkMode ? "-0.5px" : "unset",
+      },
+    },
+    {
+      types: ["prolog", "doctype", "cdata"],
       style: {
         color: "#999988",
         fontStyle: "italic",
