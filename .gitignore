@@ -1,9 +1,7 @@
 node_modules
-
-# ginore folder github
-# !/themes
-# /themes/*
-# !/themes/github
+/dist
+/themes
+/prism/*.js
 
 .DS_Store
 .vscode
