@@ -1,7 +1,11 @@
 node_modules
 /dist
-/themes
 /prism/*.js
+
+# ginore folder github
+!/themes
+/themes/*
+!/themes/github
 
 .DS_Store
 .vscode
